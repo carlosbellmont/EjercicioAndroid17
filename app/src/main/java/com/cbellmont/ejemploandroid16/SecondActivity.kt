@@ -23,43 +23,43 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Log.d(javaClass.name, "onCreate $onCreate")
         onCreate++
+        Log.d(javaClass.name, "onCreate $onCreate")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d(javaClass.name, "onStart $onStart")
         onStart++
+        Log.d(javaClass.name, "onStart $onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d(javaClass.name, "onResume $onResume")
         onResume++
+        Log.d(javaClass.name, "onResume $onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d(javaClass.name, "onPause $onPause")
         onPause++
+        Log.d(javaClass.name, "onPause $onPause")
     }
 
     override fun onStop() {
-        Log.d(javaClass.name, "onStop $onStop")
         onStop++
+        Log.d(javaClass.name, "onStop $onStop")
         super.onStop()
     }
 
     override fun onDestroy() {
-        Log.d(javaClass.name, "onDestroy $onDestroy")
         onDestroy++
+        Log.d(javaClass.name, "onDestroy $onDestroy")
         super.onDestroy()
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d(javaClass.name, "onRestart $onRestart")
         onRestart++
+        Log.d(javaClass.name, "onRestart $onRestart")
     }
 }
