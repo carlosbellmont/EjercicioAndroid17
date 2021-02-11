@@ -3,6 +3,8 @@ package com.cbellmont.ejemploandroid16
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.cbellmont.ejemploandroid16.databinding.ActivityMainBinding
+import com.cbellmont.ejemploandroid16.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
 
@@ -15,9 +17,12 @@ class SecondActivity : AppCompatActivity() {
     private var onRestart = 0
 
 
+    lateinit var binding : ActivitySecondBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        binding = ActivitySecondBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         Log.d(javaClass.name, "onCreate $onCreate")
         onCreate++
     }

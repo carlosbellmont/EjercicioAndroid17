@@ -1,10 +1,10 @@
 package com.cbellmont.ejemploandroid16
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import com.cbellmont.ejemploandroid16.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,13 +16,16 @@ class MainActivity : AppCompatActivity() {
     private var onDestroy = 0
     private var onRestart = 0
 
+    lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         Log.d(javaClass.name, "onCreate $onCreate")
         onCreate++
-        button.setOnClickListener {
+        binding.button.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
